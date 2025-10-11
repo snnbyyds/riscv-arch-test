@@ -483,11 +483,8 @@
 #define LA(reg,val)     ;\
     .ifnc(reg, X0)       ;\
         .option push    ;\
-        .option rvc     ;\
-        .align UNROLLSZ ;\
         .option norvc   ;\
         la reg,val      ;\
-        .align UNROLLSZ ;\
         .option pop     ;\
     .endif
 #define ADDI(dst, src, imm) /* helper*/ ;\
